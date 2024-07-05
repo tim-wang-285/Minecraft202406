@@ -44,6 +44,11 @@ echo "Generating map using minedmap."
 sudo /usr/bin/minedmap "${directory}/${output_dir}" "/home/timwang/minecraft202406/data"
 
 # Push to GitHub
-git commit -a -m "Update map version ${directory}/${output_dir}."
-git push origin main
-echo "Finished updating remote repo."
+sudo git commit -a -m "Update map version ${directory}/${output_dir}."
+# git push origin main
+# echo "Finished updating remote repo."
+
+# Archive save
+cp -r "${directory}/${output_dir}" "/home/timwang/Documents/mc_backup/$output_dir"
+rm -r "${directory}/${output_dir}"
+echo "Archived save to ~/Documents/mc_backup"
